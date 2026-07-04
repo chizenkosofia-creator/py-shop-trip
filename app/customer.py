@@ -8,5 +8,3 @@ class Customer:
         self.location = data["location"]
         self.money = data["money"]
         self.car = Car(data["car"])
-
-
