@@ -89,17 +89,20 @@ def shop_trip() -> None:
             )
             print(
                 f"{customer.product_cart['bread']} breads for "
-                f"{int(bread_cost) if bread_cost.is_integer() else bread_cost} dollars"
+                f"{int(bread_cost) if bread_cost.is_integer() 
+                else bread_cost} dollars"
             )
             print(
                 f"{customer.product_cart['butter']} butters for "
-                f"{int(butter_cost) if butter_cost.is_integer() else butter_cost} dollars"
+                f"{int(butter_cost) if butter_cost.is_integer() 
+                else butter_cost} dollars"
             )
             print(
                 f"Total cost is "
-                f"{int(total_prod_cost) if total_prod_cost.is_integer() else total_prod_cost} "
+                f"{int(total_prod_cost) if total_prod_cost.is_integer() 
+                else total_prod_cost} "
                 f"dollars"
             )
-            print(f"See you again!\n")
+            print("See you again!\n")
             print(f"{customer.name} rides home")
             print(f"{customer.name} now has {customer.money:.2f} dollars")
