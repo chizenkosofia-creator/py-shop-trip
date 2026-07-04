@@ -27,11 +27,13 @@ def shop_trip() -> None:
 
         for shop in shops:
             distance = (
-                               (customer.location[0] - shop.location[0]) ** 2
-                               + (customer.location[1] - shop.location[1]) ** 2
-                       ) ** 0.5
+                (customer.location[0] - shop.location[0]) ** 2
+                + (customer.location[1] - shop.location[1]) ** 2
+            ) ** 0.5
             price_ride = (
-                    customer.car.fuel_consumption / 100 * distance * fuel_price
+                customer.car.fuel_consumption / 100
+                * distance
+                * fuel_price
             )
 
             shop_costs = customer.calculate_shopping_costs(shop)
@@ -65,13 +67,17 @@ def shop_trip() -> None:
 
             for product, quantity in customer.product_cart.items():
                 cost = best_shop_costs[product]
-                formatted_cost = int(cost) if cost.is_integer() else cost
+                formatted_cost = (
+                    int(cost) if cost.is_integer() else cost
+                )
                 print(
                     f"{quantity} {product}s for {formatted_cost} dollars"
                 )
 
             total_cost = best_shop_costs["total"]
-            formatted_total = int(total_cost) if total_cost.is_integer() else total_cost
+            formatted_total = (
+                int(total_cost) if total_cost.is_integer() else total_cost
+            )
             print(f"Total cost is {formatted_total} dollars")
 
             print("See you again!\n")
