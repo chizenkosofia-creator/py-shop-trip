@@ -16,15 +16,8 @@ class Customer:
 
         for product, quantity in self.product_cart.items():
             product_cost = quantity * shop.products[product]
-            if product_cost.is_integer():
-                costs[product] = int(product_cost)
-            else:
-                costs[product] = product_cost
+            costs[product] = product_cost
             total_products_cost += product_cost
 
-        if total_products_cost.is_integer():
-            costs["total"] = int(total_products_cost)
-        else:
-            costs["total"] = total_products_cost
-
+        costs["total"] = total_products_cost
         return costs
